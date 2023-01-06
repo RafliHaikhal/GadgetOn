@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [WebController::class, 'login']);
+Route::get('/register', [WebController::class, 'register']);
