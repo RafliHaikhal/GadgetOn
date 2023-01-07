@@ -1,0 +1,9 @@
+.card-title{
+    font-size: larger;
+    font-weight: 600;
+}
+
+.card-leftside{
+    display: flex;
+    justify-content: end;
+}
