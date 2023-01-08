@@ -13,4 +13,8 @@ class WebController extends Controller
     public function home(){
         return view('home');
     }
+
+    public function mycart(){
+        return view('mycart');
+    }
 }

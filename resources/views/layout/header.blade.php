@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="http://127.0.0.1:8000/css/header.css">
     <link rel="stylesheet" href="http://127.0.0.1:8000/css/login.css">
     <link rel="stylesheet" href="http://127.0.0.1:8000/css/home.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/css/mycart.css">
     <title>@yield('title')</title>
 </head>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -21,7 +23,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">My Cart</a>
+            <a class="nav-link active" aria-current="page" href="/mycart">My Cart</a>
           </li>
           <li class="nav-item">
             <form class="d-flex" role="search">

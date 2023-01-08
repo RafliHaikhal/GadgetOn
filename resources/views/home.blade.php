@@ -11,19 +11,19 @@
                 <div class="card-collection d-flex justify-content-center flex-wrap gap-3">
                     {{-- @foreach --}}
                     <div class="card" style="width: 38rem;">
-                      <img src="" class="card-img-top" alt="" style="height: 20rem">
-                      <div class="card-body p-3">
+                      <img src="" class="home-card-img-top" alt="" style="height: 20rem">
+                      <div class="home-card-body p-3">
                         <div class="row">
-                            <div class="col card-rightside">
-                                <p class="card-title">[NAME]</p>
+                            <div class="col home-card-rightside">
+                                <p class="home-card-title">[NAME]</p>
                             </div>
-                            <div class="col card-leftside">
-                                <p class="card-year pt-1">[YEAR]</p>
+                            <div class="col home-card-leftside">
+                                <p class="home-card-year pt-1">[YEAR]</p>
                             </div>
                         </div>
                         <p>Rp [PRICE]</p>
-                        <h6 class="card-text"></h6>
-                        <a href="#" class="btn btn-primary">View Product</a>
+                        <h6 class="home-card-text"></h6>
+                        <a href="#" class="btn home-btn btn-primary">View Product</a>
                       </div>
                     </div>
                     {{-- @endforeach --}}

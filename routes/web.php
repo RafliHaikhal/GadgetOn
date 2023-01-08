@@ -20,3 +20,4 @@ Route::get('/', function () {
 
 Route::get('/login', [WebController::class, 'login']);
 Route::get('/home', [WebController::class, 'home']);
+Route::get('/mycart' ,[WebController::class, 'mycart']);

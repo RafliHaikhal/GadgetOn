@@ -1,9 +1,13 @@
-.card-title{
+.home-body-container{
+    background-color: rgb(244, 246, 254);
+}
+
+.home-card-title{
     font-size: larger;
     font-weight: 600;
 }
 
-.card-leftside{
+.home-card-leftside{
     display: flex;
     justify-content: end;
 }
