@@ -17,4 +17,8 @@ class WebController extends Controller
     public function mycart(){
         return view('mycart');
     }
+
+    public function viewpro(){
+        return view('viewproduct');
+    }
 }

@@ -14,10 +14,8 @@ use App\Http\Controllers\WebController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/login', [WebController::class, 'login']);
 Route::get('/home', [WebController::class, 'home']);
 Route::get('/mycart' ,[WebController::class, 'mycart']);
+Route::get('/viewproduct', [WebController::class, 'viewpro']);

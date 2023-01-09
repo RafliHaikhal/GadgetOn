@@ -23,7 +23,7 @@
                         </div>
                         <p>Rp [PRICE]</p>
                         <h6 class="home-card-text"></h6>
-                        <a href="#" class="btn home-btn btn-primary">View Product</a>
+                        <a href="/viewproduct" class="btn home-btn btn-primary">View Product</a>
                       </div>
                     </div>
                     {{-- @endforeach --}}

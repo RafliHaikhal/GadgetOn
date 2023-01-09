@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="http://127.0.0.1:8000/css/login.css">
     <link rel="stylesheet" href="http://127.0.0.1:8000/css/home.css">
     <link rel="stylesheet" href="http://127.0.0.1:8000/css/mycart.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8000/css/viewproduct.css">
     <title>@yield('title')</title>
 </head>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
