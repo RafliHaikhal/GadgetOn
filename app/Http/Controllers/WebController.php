@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class WebController extends Controller
 {
@@ -10,10 +11,10 @@ class WebController extends Controller
         return view('login');
     }
 
-<<<<<<< HEAD
     public function register(){
         return view('register');
-=======
+    }
+
     public function home(){
         return view('home');
     }
@@ -24,6 +25,5 @@ class WebController extends Controller
 
     public function viewpro(){
         return view('viewproduct');
->>>>>>> 3576b785f3c1886c4321fe07e7a0c68fbe8b436e
     }
 }

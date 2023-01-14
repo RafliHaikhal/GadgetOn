@@ -16,10 +16,8 @@ use App\Http\Controllers\WebController;
 
 
 Route::get('/login', [WebController::class, 'login']);
-<<<<<<< HEAD
 Route::get('/register', [WebController::class, 'register']);
-=======
-Route::get('/home', [WebController::class, 'home']);
+Route::get('/', [WebController::class, 'home']);
 Route::get('/mycart' ,[WebController::class, 'mycart']);
 Route::get('/viewproduct', [WebController::class, 'viewpro']);
->>>>>>> 3576b785f3c1886c4321fe07e7a0c68fbe8b436e
+
