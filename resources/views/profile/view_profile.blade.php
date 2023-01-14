@@ -1,6 +1,6 @@
+@section('css', '/css/view_profile.css')
 @section('title', 'Profile')
 @include('layout.header')
-@section('css', '/css/register.css')
 
 <body>
 

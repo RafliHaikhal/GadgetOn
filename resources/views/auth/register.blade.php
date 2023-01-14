@@ -1,7 +1,6 @@
 @section('css', '/css/register.css')
 @section('title', 'Register')
 @include('layout.header')
-@section('css', '/css/register.css')
 
 <body>
     <div class="box">

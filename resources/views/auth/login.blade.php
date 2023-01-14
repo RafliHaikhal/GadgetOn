@@ -1,3 +1,4 @@
+@section('css', '/css/login.css')
 @section('title', 'Login')
 @include('layout.header')
 
