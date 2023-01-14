@@ -28,3 +28,11 @@
     display: flex;
     justify-content: center;
 }
+
+.mycart-card-quantity{
+    color: rgb(223, 87, 87);
+}
+
+.mycart-card-name{
+    font-size: larger;
+}

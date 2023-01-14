@@ -1,3 +1,4 @@
+@section('css', '/css/register.css')
 @section('title', 'Register')
 @include('layout.header')
 @section('css', '/css/register.css')
@@ -39,7 +40,7 @@
                     <input type="checkbox" name="terms" id="terms">
                     <label for="checkbox">I agree all statements in <a href="#">Term of service</a></label>
                 </div>
-                <button type="submit">Register</button>
+                <button class="register-submit-button"type="submit">Register</button>
             </form>
             <p>Already have an account? <a href="/auth/login">Login here</a></p>
         </div>

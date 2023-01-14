@@ -1,4 +1,5 @@
-@section('title', 'home')
+@section('css', '/css/mycart.css')
+@section('title', 'My Cart')
 @include('layout.header')
 
 <body>
@@ -7,6 +8,11 @@
             <h1 class="ps-5">My Cart</h1>
         </div>
         <div class="row mycart-card base">
+            @if(!isset($cartProducts))
+            <tr>
+                <h3 colspan="6" class="text-center"> You don't have any product yet inside your cart! </h3>
+            </tr>
+            @else
             <div class="card-collection d-flex justify-content-center flex-wrap gap-3">
                 {{-- @foreach --}}
                 <div class="card" style="width: 85rem;">
@@ -16,17 +22,17 @@
                             <img src="" class="mycart-card-img-top" alt="" style="height: 10rem">
                         </div>
                         <div class="col mycart-card-midside">
-                            <p class="mycart-card-title">[NAME]</p>
+                            <p class="mycart-card-name">[NAME]</p>
                             <p class="mycart-card-year pt-1">[YEAR]</p>
                             <p class="mycart-card-price">Rp [PRICE]</p>
-                            <p class="mycart-card-quantity">[QUANTITY]</p>
+                            <p class="mycart-card-quantity">[QUANTITY] pc(s)</p>
                             <p class="mycart-card-description">[DESCRIPTION]</p>
                         </div>
                         <div class="col mycart-card-leftside">
                             <div class="col">
                                 <div class="row">
                                     <div class="qty-edit-btn">
-                                        <a href="#" class="btn mycart-btn btn-primary">Edit Product Qty</a>
+                                        <a href="/editproductqty" class="btn mycart-btn btn-primary">Edit Product Qty</a>
                                     </div>
                                 </div>
                                 <div class="row pt-3">
@@ -51,6 +57,7 @@
                     </div>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </body>

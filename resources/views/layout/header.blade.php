@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 @section('css', 'css/header.css')
+=======
+@section('css', '/css/header.css')
+
+>>>>>>> 791b5daaa1b7cc0866b6b524d35776b1a3ad48c2
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GadgetOn - @yield('title')</title>
+<<<<<<< HEAD
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="@yield('css')">
+=======
+    <link rel="stylesheet" href="@yield('css')">
+    <title>@yield('title')</title>
+>>>>>>> 791b5daaa1b7cc0866b6b524d35776b1a3ad48c2
 </head>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
@@ -19,21 +29,45 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
+          @if(Auth::check() && Auth::user()->role == 'Member')
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/mycart">My Cart</a>
           </li>
+          @endif
+          
+          @if(!Auth::check())
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/mycart">My Cart</a>
+          </li>
+          @endif
+
+          @if(Auth::check() && Auth::user()->role == 'Admin')
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Manage Products
+            </a>
+          </li>
+          @endif
+
           <li class="nav-item">
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-primary" type="submit">Search</button>
               </form>
           </li>
+          @if(!Auth::check())
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/auth/login">Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/auth/register">Register</a>
           </li>
+          @elseif(Auth::check())
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/profile">My Profile</a>
+          </li>
+          @endif
         </ul>
       </div>
     </div>

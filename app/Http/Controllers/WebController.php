@@ -26,4 +26,20 @@ class WebController extends Controller
     public function viewpro(){
         return view('viewproduct');
     }
+
+    public function editpro(){
+        return view('editproduct');
+    }
+
+    public function editproqty(){
+        return view('editproductcart');
+    }
+
+    public function transactionhistory(){
+        return view('transactionhistory');
+    }
+
+    public function addproduct(){
+        return view('addproduct');
+    }
 }
