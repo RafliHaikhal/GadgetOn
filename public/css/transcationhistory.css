@@ -1,0 +1,36 @@
+.transaction-history-body-container{
+    background-color: rgb(244, 246, 254);
+}
+
+.transaction-history-group{
+    background-color: rgb(171, 171, 171);
+}
+
+.transaction-history-card-title{
+    font-size: larger;
+    font-weight: 600;
+}
+
+.transaction-history-card-leftside{
+    display: flex;
+    align-items: center;
+}
+
+.transaction-history-secondsection-row{
+    display: flex;
+    align-items: center;
+}
+
+.transaction-history-total-price,
+.transaction-history-checkout-btn{
+    display: flex;
+    justify-content: center;
+}
+
+.transaction-history-card-quantity{
+    color: rgb(223, 87, 87);
+}
+
+.transaction-history-card-name{
+    font-size: larger;
+}

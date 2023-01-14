@@ -1,12 +1,14 @@
+@section('css', '/css/login.css')
 @section('title', 'Login')
 @include('layout.header')
+
 
 <body>
     <div class="login-body-container py-5">
         <div class="login-body-content">
             <div class="row">
                 <div class="col login-body-rightside">
-                    
+            
                 </div>
                 <div class="col login-body-leftside py-5">
                     <div class="login-gadgeton-text mb-3">
@@ -17,7 +19,7 @@
                     @csrf
                     <div class="form-item">
                         <label for="email">Email Address</label>
-                        <input type="email" name="email" id="email" value="{{ $email }}">
+                        <input type="email" name="email" id="email" value="">
                     </div>
                     <div class="form-item">
                         <label for="password">Password</label>

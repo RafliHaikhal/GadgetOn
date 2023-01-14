@@ -1,4 +1,5 @@
-@section('title', 'home')
+@section('css', '/css/home.css')
+@section('title', 'Home')
 @include('layout.header')
 
 <body>

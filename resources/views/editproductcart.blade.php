@@ -17,25 +17,6 @@
                             <h3 class="viewpro-card-price">Rp.[PRICE]</h3>
                             <h5 class="viewpro-card-year">[YEAR]</h5>
                             <p class="viewpro-card-description">[DESCRIPTION]</p>
-
-                            @if(Auth::check() && Auth::user()->role == 'Admin')
-                            <div class="bottom-section">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="qty-edit-btn">
-                                            <a href="/editproduct" class="btn viewpro-btn btn-primary">Edit Product</a>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="remove-item-btn">
-                                            <a href="#" class="btn viewpro-btn btn-danger">Delete Product</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            @endif
-
-                            @if(Auth::check() && Auth::user()->role == 'member')
                             <div class="bottom-section">
                                 <div class="col">
                                     <div class="row pb-3">
@@ -46,23 +27,11 @@
                                     </div>
                                     <div class="row">
                                         <div class="add-to-cart-btn">
-                                            <a href="#" class="btn viewpro-btn btn-primary">Add To Cart</a>
+                                            <a href="#" class="btn viewpro-btn btn-primary">Update Quantity</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            @endif
-
-                            @if(!Auth::check())
-                            <div class="bottom-section">
-                                <div class="pb-3">
-                                    <div class="login-to-purchase-btn">
-                                        <a href="/login" class="btn viewpro-btn btn-success">Login To Purchase</a>
-                                    </div>
-                                </div>
-                            </div>
-                            @endif
-
                         </div>
                     </div>
                 </div>
