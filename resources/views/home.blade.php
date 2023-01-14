@@ -1,5 +1,6 @@
 @section('title', 'home')
 @include('layout.header')
+@section('css', '/css/home.css')
 
 <body>
     <div class="home-body-container">
