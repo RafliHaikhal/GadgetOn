@@ -23,21 +23,45 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
+          @if(Auth::check() && Auth::user()->role == 'member')
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/mycart">My Cart</a>
           </li>
+          @endif
+          
+          @if(Auth::check() && Auth::user()->role == 'guest')
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/mycart">My Cart</a>
+          </li>
+          @endif
+
+          @if(Auth::check() && Auth::user()->role == 'admin')
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Manage Products
+            </a>
+          </li>
+          @endif
+
           <li class="nav-item">
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-primary" type="submit">Search</button>
               </form>
           </li>
+          @if(!Auth::check())
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/login">Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Register</a>
           </li>
+          @elseif(Auth::check())
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/profile">My Profile</a>
+          </li>
+          @endif
         </ul>
       </div>
     </div>

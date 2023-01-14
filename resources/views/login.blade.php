@@ -13,21 +13,22 @@
                         <h1><span class="navbar-text text-black">Gadget</span><span class="navbar-text text-danger">On</span></h1>
                     </div>
                     <h5 class="login-signin-text mb-4">Sign in to your account</h5>
-                    <form action="" method="POST">
+                    <form action="" method="post">
+                    @csrf
                     <div class="form-item">
-                        <label for="name">Email Address</label>
-                        <input type="email" name="" id="">
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" id="email" value="{{ $email }}">
                     </div>
                     <div class="form-item">
-                        <label for="name">Password</label>
-                        <input type="password" name="" id="">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password">
                     </div>
                     <div class="form-item">
-                        <input type="checkbox" name="" id="">
-                        <label for="rememberme">Remember Me</label>
+                        <input type="checkbox" name="remember" value ="0" id="remember">
+                        <label for="remember">Remember Me</label>
                     </div>
                     </form>
-                <button class="login-button"type="submit">
+                <button class="btn login-button"type="submit">
                     Login
                 </button>
                 <p>Don't have an account? <a class="login-registernow"href="/register">Register here</a></p>
