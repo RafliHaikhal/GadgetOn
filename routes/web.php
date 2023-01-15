@@ -39,8 +39,6 @@ Route::post('/profile/edit', [UserController::class, 'update_profile'])->name('u
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product_detail');
 
 Route::get('/mycart' ,[WebController::class, 'mycart']);
-Route::get('/viewproduct', [WebController::class, 'viewpro']);
-Route::get('/mycart' ,[WebController::class, 'mycart']);
 Route::get('/editproduct', [WebController::class, 'editpro']);
 Route::get('/editproductqty', [WebController::class, 'editproqty']);
 Route::get('/transactionhistory', [WebController::class, 'transactionhistory']);

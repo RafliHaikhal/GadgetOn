@@ -22,21 +22,6 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-<<<<<<< HEAD
-          @if(Auth::check() && Auth::user()->role == 'Member')
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ route('index_login') }}">My Cart</a>
-          </li>
-          @endif
-
-          @if(!Auth::check())
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ route('index_login') }}">My Cart</a>
-          </li>
-          @endif
-
-=======
->>>>>>> e25d30b285f3bda6a606c38565753f7a934f9c09
           @if(Auth::check() && Auth::user()->role == 'Admin')
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,11 +34,11 @@
           </li>
           @elseif(Auth::check())
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/mycart">My Cart</a>
+            <a class="nav-link active" aria-current="page" href="#">My Cart</a>
           </li>
           @elseif(!Auth::check())
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/auth/login">My Cart</a>
+            <a class="nav-link active" aria-current="page" href="{{ route('index_login') }}">My Cart</a>
           </li>
           @endif
 
@@ -73,15 +58,15 @@
               <a class="nav-link active" aria-current="page" href="/auth/register">Register</a>
             </li>
           </div>
-          
+
           @elseif(Auth::check())
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              {{-- {{ $user->name }} --}}
+              {{ $user->name }}
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="/profile">View Profile</a></li>
-              @if(Auth::user()->role == 'Admin')
+              @if(Auth::user()->role == 'Member')
               <li><a class="dropdown-item" href="/trasactionhistory">Purchase History</a></li>
               @endif
               <form action="{{ route('logout') }}" method="post">
@@ -90,7 +75,7 @@
             </form>
             </ul>
           </li>
-                  
+
           @endif
         </ul>
       </div>
