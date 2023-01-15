@@ -46,4 +46,24 @@ class UserController extends Controller
         return view('profile.edit_profile', compact('user'));
     }
 
+    public function update_profile(Request $request){
+        $request->validate([
+           'name' => 'required|max:100',
+           'email' => 'required|email',
+           'address' => 'required|min:5|max:150',
+           'password' => 'max:20'
+        ]);
+
+        $user = User::all()->find(Auth::user()->id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->address = $request->address;
+        if ($request->input('password') != null){
+            $user->password = Hash::make($request->password);
+        }
+
+        $user->save();
+        return redirect()->route('show_profile')->with('alert', 'Profile successful updated.');
+    }
+
 }

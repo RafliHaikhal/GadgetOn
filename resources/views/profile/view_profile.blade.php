@@ -6,9 +6,8 @@
 
     <div class="box">
         <div class="box-content">
-            <img src="#" alt="profile-img">
-            <form action="" method="post">
-                @csrf
+            <img src="https://cdn-icons-png.flaticon.com/512/3237/3237472.png" alt="profile-img">
+            <div class="form">
                 <div class="form-item">
                     <label for="name">Profile Name</label>
                     <input type="text" name="name" id="name" value="{{ $user->name }}" disabled>
@@ -21,8 +20,9 @@
                     <label for="address">Profile Address</label>
                     <input type="text" name="address" id="address" value="{{ $user->address }}" disabled>
                 </div>
-                <button class="view_profile" type="submit">Edit Profile</button>
-            </form>
+                <a href="{{ route('edit_profile') }}">Edit Profile</a>
+            </div>
+
         </div>
     </div>
 

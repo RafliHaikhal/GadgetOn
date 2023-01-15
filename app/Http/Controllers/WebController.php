@@ -2,23 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class WebController extends Controller
 {
-    public function login(){
-        return view('login');
-    }
-
-    public function register(){
-        return view('register');
-    }
-
-    public function home(){
+    public function index(){
         $user = Auth::user();
-        return view('home', compact('user'));
+        $products = Product::paginate(6);
+
+        return view('home', compact('user','products'));
     }
 
     public function mycart(){

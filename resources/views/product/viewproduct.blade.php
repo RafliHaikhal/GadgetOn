@@ -13,10 +13,10 @@
                             <img src="" class="viewpro-card-img-top" alt="" style="height: 10rem">
                         </div>
                         <div class="col viewpro-card-rightside">
-                            <h3 class="viewpro-card-name">[NAME]</h3>
-                            <h3 class="viewpro-card-price">Rp.[PRICE]</h3>
-                            <h5 class="viewpro-card-year">[YEAR]</h5>
-                            <p class="viewpro-card-description">[DESCRIPTION]</p>
+                            <h3 class="viewpro-card-name">{{ $product->name }}</h3>
+                            <h3 class="viewpro-card-price">Rp{{ $product->price }}</h3>
+                            <h5 class="viewpro-card-year">{{ $product->year }}</h5>
+                            <p class="viewpro-card-description">{{ $product->description }}</p>
 
                             @if(Auth::check() && Auth::user()->role == 'Admin')
                             <div class="bottom-section">
@@ -35,7 +35,7 @@
                             </div>
                             @endif
 
-                            @if(Auth::check() && Auth::user()->role == 'member')
+                            @if(Auth::check() && Auth::user()->role == 'Member')
                             <div class="bottom-section">
                                 <div class="col">
                                     <div class="row pb-3">

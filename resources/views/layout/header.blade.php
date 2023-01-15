@@ -23,13 +23,13 @@
 
           @if(Auth::check() && Auth::user()->role == 'Member')
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/mycart">My Cart</a>
+            <a class="nav-link active" aria-current="page" href="{{ route('index_login') }}">My Cart</a>
           </li>
           @endif
 
           @if(!Auth::check())
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/mycart">My Cart</a>
+            <a class="nav-link active" aria-current="page" href="{{ route('index_login') }}">My Cart</a>
           </li>
           @endif
 

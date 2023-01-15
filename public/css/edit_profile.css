@@ -25,7 +25,7 @@ img {
     width: 4rem;
 }
 
-.form {
+form {
     box-sizing: border-box;
 }
 
@@ -34,7 +34,8 @@ img {
 }
 
 .form-item > input[type=text],
-.form-item > input[type=email]{
+.form-item > input[type=email],
+.form-item > input[type=password]{
     width: 100%;
     border: 1px solid #000000;
     border-radius: 0.25rem;
@@ -49,25 +50,41 @@ label{
     font-weight: 500;
 }
 
-.form > a {
+.edit_profile {
+    cursor: pointer;
     width: 100%;
-    margin-top: 3rem;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
+    height: 3rem;
+    outline: none;
     background: #a91f10;
-    padding: 0.5rem 0;
-    border: 1px solid #a91f10;
+    border: 1px solid #ffffff;
     border-radius: 10rem;
-    color: #ffffff;
+    transition: all 500ms;
     font-size: 12pt;
     font-weight: 500;
+    color: #ffffff;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
     transition: all 500ms;
 }
 
-.form > a:hover{
+.edit_profile:hover{
     color: #a91f10;
     border: 1px solid #a91f10;
     background: #ffffff;
+    transition: all 500ms;
+}
+
+.box-content > a {
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    background: #d7d7d7;
+    padding: 0.5rem 0;
+    border: 1px solid #d7d7d7;
+    border-radius: 10rem;
+    color: #838383;
+    font-size: 12pt;
+    font-weight: 500;
     transition: all 500ms;
 }
