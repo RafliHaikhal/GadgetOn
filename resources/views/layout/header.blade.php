@@ -13,7 +13,7 @@
 </head>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand fw-semibold" href="/">
+      <a class="navbar-brand fw-semibold pe-2" href="/">
         <span class="navbar-text text-black">Gadget</span><span class="navbar-text text-danger">On</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,39 +42,44 @@
           </li>
           @endif
 
-          <li class="nav-item">
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <li class="nav-item ps-4" style="">
+            <form class="search-bar d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="">
                 <button class="btn btn-outline-primary" type="submit">Search</button>
-              </form>
+            </form>
           </li>
           @if(!Auth::check())
-          <div class="row position-absolute top-50 end-0 translate-middle-y">
-            div.col
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/auth/login">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/auth/register">Register</a>
-            </li>
+          <div class="row position-absolute top-50 end-0 translate-middle-y me-2">
+            <div class="col">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/auth/login">Login</a>
+              </li>
+            </div>
+            <div class="col">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/auth/register">Register</a>
+              </li>
+            </div>
           </div>
 
           @elseif(Auth::check())
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              {{ $user->name }}
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/profile">View Profile</a></li>
-              @if(Auth::user()->role == 'Member')
-              <li><a class="dropdown-item" href="/trasactionhistory">Purchase History</a></li>
-              @endif
-              <form action="{{ route('logout') }}" method="post">
-                @csrf
-                <button class="btn btn-danger">Logout</button>
-            </form>
-            </ul>
-          </li>
+          <div class="position-absolute top-50 end-0 translate-middle-y me-4">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{ $user->name }}
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/profile">View Profile</a></li>
+                @if(Auth::user()->role == 'Member')
+                <li><a class="dropdown-item" href="/trasactionhistory">Purchase History</a></li>
+                @endif
+                <form action="{{ route('logout') }}" method="post">
+                  @csrf
+                  <button class="btn btn-danger">Logout</button>
+                </form>
+              </ul>
+            </li>
+          </div>
 
           @endif
         </ul>
