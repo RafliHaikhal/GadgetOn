@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col login-body-rightside">
             </div>
-            <div class="col login-body-leftside py-5">
+            <div class="col login-body-leftside py-5 px-5">
                 <div class="login-gadgeton-text mb-3">
                     <h1><span class="navbar-text text-black">Gadget</span><span
                             class="navbar-text text-danger">On</span></h1>

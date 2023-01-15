@@ -39,4 +39,8 @@ class WebController extends Controller
     public function addproduct(){
         return view('addproduct');
     }
+
+    public function manageproduct(){
+        return view('manageproduct');
+    }
 }

@@ -2,8 +2,9 @@
     background-color: rgb(244, 246, 254);
 }
 
-.transaction-history-group{
-    background-color: rgb(171, 171, 171);
+.transaction-history-card{
+    background-color: rgb(240, 240, 240);
+    margin: 0 10% 0 10%;
 }
 
 .transaction-history-card-title{
@@ -27,10 +28,17 @@
     justify-content: center;
 }
 
-.transaction-history-card-quantity{
+.transaction-history-card-quantity,
+.transaction-history-card-price{
     color: rgb(223, 87, 87);
 }
 
 .transaction-history-card-name{
     font-size: larger;
+}
+
+.transaction-history-purchase-date,
+.transaction-history-secondsection{
+    padding: 2% 0 2% 7%;
+
 }

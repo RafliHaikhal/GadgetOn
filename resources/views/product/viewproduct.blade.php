@@ -57,7 +57,7 @@
                             <div class="bottom-section">
                                 <div class="pb-3">
                                     <div class="login-to-purchase-btn">
-                                        <a href="/login" class="btn viewpro-btn btn-success">Login To Purchase</a>
+                                        <a href="/auth/login" class="btn viewpro-btn btn-success">Login To Purchase</a>
                                     </div>
                                 </div>
                             </div>

@@ -45,4 +45,5 @@ Route::get('/editproduct', [WebController::class, 'editpro']);
 Route::get('/editproductqty', [WebController::class, 'editproqty']);
 Route::get('/transactionhistory', [WebController::class, 'transactionhistory']);
 Route::get('/addproduct', [WebController::class, 'addproduct']);
+Route::get('/manageproduct', [WebController::class, 'manageproduct']);
 
