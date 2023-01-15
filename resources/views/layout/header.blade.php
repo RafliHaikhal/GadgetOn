@@ -1,4 +1,4 @@
-@section('css', '/css/header.css')
+@section('css', 'css/header.css')
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,24 +21,24 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          
-          @if(Auth::check() && Auth::user()->role == 'Member')
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/mycart">My Cart</a>
-          </li>
-          @endif
-          
-          @if(!Auth::check())
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/mycart">My Cart</a>
-          </li>
-          @endif
 
           @if(Auth::check() && Auth::user()->role == 'Admin')
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Manage Products
             </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/addproduct">Add Product</a></li>
+              <li><a class="dropdown-item" href="#">Manage Product</a></li>
+            </ul>
+          </li>
+          @elseif(Auth::check())
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/mycart">My Cart</a>
+          </li>
+          @elseif(!Auth::check())
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/auth/login">My Cart</a>
           </li>
           @endif
 
@@ -49,16 +49,33 @@
               </form>
           </li>
           @if(!Auth::check())
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/login">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/register">Register</a>
-          </li>
+          <div class="row position-absolute top-50 end-0 translate-middle-y">
+            div.col
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/auth/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/auth/register">Register</a>
+            </li>
+          </div>
+          
           @elseif(Auth::check())
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/profile">My Profile</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{-- {{ $user->name }} --}}
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/profile">View Profile</a></li>
+              @if(Auth::user()->role == 'Admin')
+              <li><a class="dropdown-item" href="/trasactionhistory">Purchase History</a></li>
+              @endif
+              <form action="{{ route('logout') }}" method="post">
+                @csrf
+                <button class="btn btn-danger">Logout</button>
+            </form>
+            </ul>
           </li>
+                  
           @endif
         </ul>
       </div>

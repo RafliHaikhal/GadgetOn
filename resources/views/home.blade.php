@@ -1,6 +1,7 @@
 @section('css', '/css/home.css')
 @section('title', 'Home')
 @include('layout.header')
+@section('css', '/css/home.css')
 
 <body>
     <div class="home-body-container">
@@ -10,22 +11,23 @@
             </div>
             <div class="row home-card base">
                 <div class="card-collection d-flex justify-content-center flex-wrap gap-3">
+                    
                     {{-- @foreach --}}
                     <div class="card" style="width: 38rem;">
-                      <img src="" class="home-card-img-top" alt="" style="height: 20rem">
-                      <div class="home-card-body p-3">
-                        <div class="row">
-                            <div class="col home-card-rightside">
-                                <p class="home-card-title">[NAME]</p>
-                            </div>
-                            <div class="col home-card-leftside">
-                                <p class="home-card-year pt-1">[YEAR]</p>
-                            </div>
+                        <img src="" class="home-card-img-top" alt="" style="height: 20rem">
+                        <div class="home-card-body p-3">
+                          <div class="row">
+                              <div class="col home-card-rightside">
+                                  <p class="home-card-title">[NAME]</p>
+                              </div>
+                              <div class="col home-card-leftside">
+                                  <p class="home-card-year pt-1">[YEAR]</p>
+                              </div>
+                          </div>
+                          <p>Rp [PRICE]</p>
+                          <h6 class="home-card-text"></h6>
+                          <a href="/viewproduct" class="btn home-btn btn-primary">View Product</a>
                         </div>
-                        <p>Rp [PRICE]</p>
-                        <h6 class="home-card-text"></h6>
-                        <a href="/viewproduct" class="btn home-btn btn-primary">View Product</a>
-                      </div>
                     </div>
                     {{-- @endforeach --}}
                 </div>
