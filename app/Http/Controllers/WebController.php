@@ -16,10 +16,6 @@ class WebController extends Controller
         return view('home', compact('user','products'));
     }
 
-    public function mycart(){
-        return view('mycart');
-    }
-
     public function viewpro(){
         return view('viewproduct');
     }

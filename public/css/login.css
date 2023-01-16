@@ -1,8 +1,10 @@
 .login-body-container{
     background-color: rgb(209, 209, 209);
+    height: 115vh;
 }
 
 .login-body-content{
+    margin-top: 3rem;
     background-color: white;
     margin-right: 15rem;
     margin-left: 15rem;
@@ -12,8 +14,9 @@
 .login-body-rightside{
     height: 50rem;
     background-image: url(../assets/pictureAtLogin.png);
-    background-size: 100;
+    background-size: cover;
     border-radius: 1rem 0rem 0rem 1rem;
+    background-repeat: no-repeat;
 }
 
 login-gadgeton-text{

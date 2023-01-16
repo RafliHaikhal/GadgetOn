@@ -1,9 +1,8 @@
+@extends('layout.template')
 @section('css', '/css/edit_profile.css')
 @section('title', 'Profile')
-@include('layout.header')
 
-<body>
-
+@section('content')
 <div class="box">
     <div class="box-content">
         <img src="https://cdn-icons-png.flaticon.com/512/3237/3237472.png" alt="profile-img">
@@ -43,5 +42,4 @@
         @endif
     </div>
 </div>
-
-</body>
+@endsection

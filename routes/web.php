@@ -5,6 +5,7 @@ use App\Http\Controllers\WebController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
 
 
 /*
@@ -36,12 +37,21 @@ Route::get('/profile/edit', [UserController::class, 'edit_page'])->name('edit_pr
 Route::post('/profile/edit', [UserController::class, 'update_profile'])->name('update_profile');
 
 // Product
+Route::get('/product/add', [ProductController::class, 'add_page'])->name('add_page');
+Route::post('/product/add', [ProductController::class, 'add'])->name('product_add');
+Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('edit_product');
+Route::post('product/edit/{id}', [ProductController::class, 'update'])->name('product_edit');
+Route::delete('/product/delete/{id}', [ProductController::class, 'delete'])->name('product_delete');
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product_detail');
+Route::get('/search', [ProductController::class, 'search'])->name('product_search');
 
-Route::get('/mycart' ,[WebController::class, 'mycart']);
-Route::get('/editproduct', [WebController::class, 'editpro']);
+// Cart
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
+Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('add_cart');
+Route::post('/cart/edit/{id}', [CartController::class, 'update'])->name('update_cart');
+
+// Transaction
 Route::get('/editproductqty', [WebController::class, 'editproqty']);
 Route::get('/transactionhistory', [WebController::class, 'transactionhistory']);
-Route::get('/addproduct', [WebController::class, 'addproduct']);
 Route::get('/manageproduct', [WebController::class, 'manageproduct']);
 
