@@ -13,7 +13,6 @@
                     <h3 colspan="6" class="text-center"> You don't have any product yet inside your cart! </h3>
                 </tr>
             @else
-                <tr>
                     <div class="card-collection d-flex justify-content-center flex-wrap gap-3">
                         @foreach($cartProducts as $cartProduct)
                             <form action="" method="post">
@@ -22,7 +21,7 @@
                                     <div class="mycart-card-body p-4">
                                         <div class="row">
                                             <div class="col mycart-card-rightside">
-                                                <img src="{{ $cartProduct->product->image }}" class="mycart-card-img-top" alt="" style="height: 10rem;">
+                                                <img src="{{Storage::url('/assets/'.$cartProduct->product->image)}}" class="mycart-card-img-top" alt="" style="height: 10rem;">
                                             </div>
                                             <div class="col mycart-card-midside">
                                                 <p class="mycart-card-name">{{ $cartProduct->product->name }}</p>
@@ -53,27 +52,23 @@
                             </form>
                         @endforeach
                     </div>
-                </tr>
-
                 @php
                     $total = 0;
                     foreach ($cartProducts as $cartProduct){
                         $total += $cartProduct->product->price*$cartProduct->quantity;
                     }
                 @endphp
-        <tr>
             </div>
             <div class="mycart-secondsection-row p-5">
                 <div class="row mycart-secondsection-row">
                     <div class="col mycart-total-price">
-                        <h3>Total Price : {{ $total }}</h3>
+                        <h3 class="ps-5">Total Price : {{ $total }}</h3>
                     </div>
                     <div class="col mycart-checkout-btn">
                         <a href="#" class="btn mycart-btn btn-primary">Checkout</a>
                     </div>
                 </div>
             </div>
-        </tr>
         @endif
     </div>
     @if($errors->any())
