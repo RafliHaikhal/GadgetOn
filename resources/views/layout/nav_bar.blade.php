@@ -55,14 +55,14 @@
                            aria-expanded="false">
                             {{ $user->name }}
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu" style="">
                             <li><a class="dropdown-item" href="/profile">View Profile</a></li>
                             @if(Auth::user()->role == 'Member')
                                 <li><a class="dropdown-item" href="{{ route('history') }}">Purchase History</a></li>
                             @endif
                             <form action="{{ route('logout') }}" method="post">
                                 @csrf
-                                <button class="btn btn-danger">Logout</button>
+                                <button class=" btn btn-danger">Logout</button>
                             </form>
                         </ul>
                     </li>

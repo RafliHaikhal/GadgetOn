@@ -31,7 +31,7 @@
                                                 <form action="{{ route('product_delete', $products->id) }}" method="post">
                                                     @csrf
                                                     @method('delete')
-                                                    <button class="btn btn-danger">Delete Product</button>
+                                                    <button class="btn btn-danger viewpro-btn">Delete Product</button>
                                                 </form>
                                             </div>
                                         </div>
