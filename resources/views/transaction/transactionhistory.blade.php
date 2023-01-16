@@ -1,6 +1,6 @@
+@extends('layout.template')
 @section('css', '/css/transactionhistory.css')
 @section('title', 'Transaction History')
-@include('layout.template.blade.php')
 
 <body>
 <div class="transaction-history-body-container">

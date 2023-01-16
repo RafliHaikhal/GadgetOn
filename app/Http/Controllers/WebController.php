@@ -15,14 +15,10 @@ class WebController extends Controller
 
         return view('home', compact('user','products'));
     }
-
-<<<<<<< HEAD
-=======
     public function mycart(){
         return view('cart.mycart');
     }
 
->>>>>>> 497e314ab21fa8040c31bebaeadb36e75aeca710
     public function viewpro(){
         return view('viewproduct');
     }
@@ -36,7 +32,7 @@ class WebController extends Controller
     }
 
     public function transactionhistory(){
-        return view('transactionhistory');
+        return view('transaction.transactionhistory');
     }
 
     public function addproduct(){
