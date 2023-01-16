@@ -46,7 +46,7 @@
                                                 <div class="row pb-3">
                                                     <div class="qty-input">
                                                         <label for="quantity">Quantity :</label>
-                                                        <input type="quantity" name="quantity" id="quantity">
+                                                        <input class="form-control" type="quantity" name="quantity" id="quantity">
                                                     </div>
                                                 </div>
                                                 <div class="row">

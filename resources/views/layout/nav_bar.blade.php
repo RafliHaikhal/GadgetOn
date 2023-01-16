@@ -20,7 +20,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('add_page') }}">Add Product</a></li>
-                            <li><a class="dropdown-item" href="#">Manage Product</a></li>
+                            <li><a class="dropdown-item" href="{{ route('manage_product') }}">Manage Product</a></li>
                         </ul>
                     </li>
                 @elseif(Auth::check() && Auth::user()->role == 'Member')
@@ -58,7 +58,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/profile">View Profile</a></li>
                             @if(Auth::user()->role == 'Member')
-                                <li><a class="dropdown-item" href="/trasactionhistory">Purchase History</a></li>
+                                <li><a class="dropdown-item" href="{{ route('history') }}">Purchase History</a></li>
                             @endif
                             <form action="{{ route('logout') }}" method="post">
                                 @csrf

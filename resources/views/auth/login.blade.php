@@ -18,11 +18,11 @@
                     @csrf
                     <div class="form-item">
                         <label for="name">Email Address</label>
-                        <input type="email" name="email" id="email" autocomplete="off">
+                        <input class="ps-3" type="email" name="email" id="email" autocomplete="off">
                     </div>
                     <div class="form-item">
                         <label for="name">Password</label>
-                        <input type="password" name="password" id="password">
+                        <input class="ps-3" type="password" name="password" id="password">
                     </div>
                     <div class="form-item">
                         <input type="checkbox" name="remember" id="remember">

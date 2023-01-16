@@ -6,7 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
-
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,15 +43,17 @@ Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('edit
 Route::post('product/edit/{id}', [ProductController::class, 'update'])->name('product_edit');
 Route::delete('/product/delete/{id}', [ProductController::class, 'delete'])->name('product_delete');
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product_detail');
+Route::get('/manage/product', [ProductController::class, 'manage'])->name('manage_product');
 Route::get('/search', [ProductController::class, 'search'])->name('product_search');
 
 // Cart
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('add_cart');
+Route::get('/cart/edit/{id}', [CartController::class, 'edit'])->name('edit_cart');
 Route::post('/cart/edit/{id}', [CartController::class, 'update'])->name('update_cart');
+Route::delete('/cart/delete/{id}', [CartController::class, 'delete'])->name('remove_cart');
 
 // Transaction
-Route::get('/editproductqty', [WebController::class, 'editproqty']);
-Route::get('/transactionhistory', [WebController::class, 'transactionhistory']);
-Route::get('/manageproduct', [WebController::class, 'manageproduct']);
+Route::get('/transaction', [TransactionController::class, 'index'])->name('history');
+Route::post('/cart/checkout', [TransactionController::class, 'checkout'])->name('checkout');
 

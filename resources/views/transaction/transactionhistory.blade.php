@@ -1,31 +1,35 @@
+@extends('layout.template')
 @section('css', '/css/transactionhistory.css')
 @section('title', 'Transaction History')
-@include('layout.template.blade.php')
 
-<body>
+@section('content')
 <div class="transaction-history-body-container">
     <div class="transaction-history-body-title p-4">
         <h1 class="ps-5">My Transaction History</h1>
     </div>
-    {{-- @foreach --}}
+
+    @if($transactions->isEmpty())
+        <h4 class="text-center">No Transaction</h4>
+    @endif
+    @foreach($transactions as $transaction)
     <div class="transaction-history-card mb-3">
         <div class="transaction-history-purchase-date">
-            <p>Purchased <span class="text-danger">On: </span> [DATE]</p>
+            <p>Purchased <span class="text-danger">On: </span> {{ $transaction->created_at }}</p>
         </div>
         <div class="transaction-history-card-base">
             <div class="card-collection d-flex justify-content-center flex-wrap gap-3">
-                {{-- @foreach --}}
+                @foreach($transaction->transactionDetails as $transactionProduct)
                 <div class="card" style="width: 75rem;">
                     <div class="transaction-history-card-body p-4">
                         <div class="row">
                             <div class="col transaction-history-card-rightside">
-                                <img src="" class="transaction-history-card-img-top" alt="" style="height: 10rem">
+                                <img src="{{Storage::url('/assets/'.$transactionProduct->product->image)}}" class="transaction-history-card-img-top" alt="" style="height: 10rem">
                             </div>
                             <div class="col transaction-history-card-midside">
-                                <p class="transaction-history-card-name">[NAME]</p>
-                                <p class="transaction-history-card-quantity">[QUANTITY]</p>
-                                <p class="transaction-history-card-price">Rp [PRICE]</p>
-                                <p class="transaction-history-card-description">[DESCRIPTION]</p>
+                                <p class="transaction-history-card-name">{{ $transactionProduct->product->name }}</p>
+                                <p class="transaction-history-card-quantity">{{ $transactionProduct->quantity }}</p>
+                                <p class="transaction-history-card-price">Rp{{ $transactionProduct->product->price * $transactionProduct->quantity }}</p>
+                                <p class="transaction-history-card-description">{{ $transactionProduct->product->description }}</p>
                             </div>
                             <div class="col transaction-history-card-leftside">
 
@@ -33,14 +37,26 @@
                         </div>
                     </div>
                 </div>
-                {{-- @endforeach --}}
+                @endforeach
+
+                @php
+                    $total = 0;
+                    foreach ($transaction->transactionDetails as $transactionProduct){
+                        $total += $transactionProduct->product->price*$transactionProduct->quantity;
+                    }
+                @endphp
+
             </div>
             <div class="transaction-history-secondsection">
-                <p>Total Transaction Cost: <span class="text-danger">Rp.[TOTAL PRICE]</span></p>
+                <p>Total Transaction Cost: <span class="text-danger">Rp.{{ $total }}</span></p>
             </div>
         </div>
     </div>
-    {{-- @endforeach --}}
+    @endforeach
 </div>
-</body>
-</html>
+<script>
+    if({{ Session::has('alert') }}){
+        alert('{{ Session::get('alert') }}');
+    }
+</script>
+@endsection

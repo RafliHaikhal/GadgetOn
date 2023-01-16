@@ -17,14 +17,22 @@ class ProductController extends Controller
         return view('product.viewproduct', compact('products','user'));
     }
 
+    public function manage(){
+        $user = Auth::user();
+        $products = Product::paginate(6);
+
+        return view('product.manageproduct', compact('user','products'));
+    }
+
     public function search(Request $request){
+        $user = Auth::user();
         $query = $request->search;
 
         if($query != null){
             $products = Product::where('name', 'like', '%'.$query.'%')->orWhere('description', 'like', '%'.$query.'%')
                 ->paginate(6)->withQueryString();
 
-            return view('home', compact('products', 'query'));
+            return view('home', compact('products', 'query', 'user'));
         }
 
         return redirect()->route('index');
